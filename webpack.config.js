@@ -1,31 +1,32 @@
 var path = require('path');
 var webpack = require('webpack');
 
+function resolve (dir) {
+    return path.join(__dirname,dir)
+}
+
 module.exports = {
     entry: './texttojson/static/js/index.js',
     output: {
-        path: __dirname,
+        path: resolve('texttojson/build'),
         filename: 'bundle.js'
     },
     module: {
         rules: [
             {
+                test: /\.js$/,
                 loader: 'babel-loader',
-                test: path.join(__dirname, 'texttojson'),
-                query: {
-                    presets: 'es2015',
-                },
+                include: [resolve('texttojson/static/js')]
             }
         ]
     },
+    mode: 'production',
     plugins: [
-        // Avoid publishing files when compilation fails
-        new webpack.NoErrorsPlugin()
     ],
     stats: {
         // Nice colored output
         colors: true
     },
     // Create Sourcemaps for the bundle
-    devtool: 'source-map',
+    devtool: '#source-map',
 };

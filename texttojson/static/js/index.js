@@ -12,4 +12,9 @@ function log(obj,isstr) {
 import {Stack} from './stack.js';
 var text="a:{b:c,d:{e:f}}";
 var stack=new Stack();
-log(stack);
+stack.push(1);
+stack.push(2);
+stack.push(3);
+stack.pop();
+stack.pop();
+log(stack,true);

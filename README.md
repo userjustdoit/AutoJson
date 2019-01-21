@@ -19,4 +19,6 @@ A try to simple describle all work in json like(by format rule edit) , A toolcha
 ```
 ```
  #part1:input jsonlike text in simple way,supply a online tool to convert jsonlike text to json.
+
 ```
+ #npm run build

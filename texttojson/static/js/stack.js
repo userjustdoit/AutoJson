@@ -10,7 +10,7 @@ export class Stack {
     }
 
     push(obj){
-        this.Stack.unshift(1);
+        this.Stack.unshift(obj);
     }
 
     pop(){
