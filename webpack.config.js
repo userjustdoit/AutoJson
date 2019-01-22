@@ -15,7 +15,7 @@ function resolve (dir) {
 console.log('building');
 
 module.exports = {
-    entry: {'index':'./texttojson/static/js/index.js'},
+    entry: {'index':'./texttojson/static/js/main.js'},
     output: {
         path: resolve('texttojson/build'),
         filename: '[name].[chunkhash].js'
