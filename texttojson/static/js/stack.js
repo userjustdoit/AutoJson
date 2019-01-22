@@ -10,11 +10,14 @@ export class Stack {
     }
 
     push(obj){
-        this.Stack.unshift(obj);
+        this.Stack.push(obj);
     }
 
     pop(){
        return this.Stack.pop();
     }
 
+    isEmpty(){
+        return this.Stack.length==0;
+    }
 }
