@@ -17,10 +17,8 @@
     "webpack-cli": "^3.2.1"
   },
   "scripts": {
-    "clean": "rimraf texttojson/build/",
-    "build": "npm run clean && webpack --watch",
-    "clean2": "rimraf ./dist/*",
-    "test": "npm run clean2 && webpack --watch  --config build/webpack.config.js"
+    "clean": "rimraf ./dist/*",
+    "build": "npm run clean && webpack --watch  --config build/webpack.config.js"
   },
   "author": "",
   "license": "ISC"
