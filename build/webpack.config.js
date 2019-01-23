@@ -18,7 +18,7 @@ module.exports = {
     entry: utils.entries(),
     output: {
         path: resolve('dist'),
-        filename: '[name]/[name].[chunkhash].js'
+        filename: '[name]/[name].[hash].js'
     },
     module: {
         rules: [
@@ -30,7 +30,20 @@ module.exports = {
         ]
     },
     mode: 'production',
+    devServer: {
+        clientLogLevel: 'warning',
+        contentBase: path.join(__dirname, "dist"),
+        host: config.dev.host,
+        port: config.dev.port,
+        overlay: config.dev.errorOverlay
+            ? { warnings: false, errors: true }
+            : false,
+        quiet: true, // necessary for FriendlyErrorsPlugin
+        hot: true,
+        compress: true,
+    },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         // copy custom static assets
         new CopyWebpackPlugin([
             {
